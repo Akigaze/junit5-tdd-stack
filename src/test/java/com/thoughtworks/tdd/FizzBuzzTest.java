@@ -1,9 +1,20 @@
 package com.thoughtworks.tdd;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.fest.assertions.api.Assertions.assertThat;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+
+
 public class FizzBuzzTest {
+
     @Test
     public void should_return_1_when_call_FizzBuzz_input_1(){
         //given
@@ -88,15 +99,15 @@ public class FizzBuzzTest {
         Assertions.assertEquals("FizzWhizz",result);
     }
 
-    @Test
-    public void should_return_BuzzWhizz_when_call_fizzBuzz_input_35(){
-        int number=35;
-        FizzBuzz fizzBuzz=new FizzBuzz();
-
-        String result=fizzBuzz.fizzBuzz(number);
-
-        Assertions.assertEquals("BuzzWhizz",result);
-    }
+//    @Test
+//    public void should_return_BuzzWhizz_when_call_fizzBuzz_input_35(){
+//        int number=35;
+//        FizzBuzz fizzBuzz=new FizzBuzz();
+//
+//        String result=fizzBuzz.fizzBuzz(number);
+//
+//        Assertions.assertEquals("BuzzWhizz",result);
+//    }
 
     @Test
     public void should_return_FizzBuzzWhizz_when_call_fizzBuzz_input_105(){
@@ -107,4 +118,24 @@ public class FizzBuzzTest {
 
         Assertions.assertEquals("FizzBuzzWhizz",result);
     }
+
+    @Test
+    public void should_return_Fizz_when_call_fizzBuzz_input_with_three(){
+        int number1=13;
+        int number2=35;
+        int number3=131;
+
+        FizzBuzz fizzBuzz=new FizzBuzz();
+
+        String result1=fizzBuzz.fizzBuzz(number1);
+        String result2=fizzBuzz.fizzBuzz(number2);
+        String result3=fizzBuzz.fizzBuzz(number3);
+
+
+        Assertions.assertEquals("Fizz",result1);
+        Assertions.assertEquals("Fizz",result2);
+        Assertions.assertEquals("Fizz",result3);
+
+    }
+
 }
